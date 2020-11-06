@@ -5,7 +5,7 @@ def relation(x, y): # relation
     #return math.sqrt(x**2 + y**2)/15
     #return x**10 + y**10 == 10**10
     #return math.sin(x)**2 + math.cos(x)**2
-    #return math.sin(x/5) + math.cos(y/5)
+    return math.sin(x/5) + math.cos(y/5)
     #return (x**3 + y**3 + 100*x*y)**2 / 10000000
     
 def func(x): # function
@@ -18,8 +18,8 @@ def func(x): # function
     #return x**3/1000
     #return (x/20)**(x/20) * 20-100
 
-def graph(f, X_RANGE=100, Y_RANGE=100, LINE_WIDTH=1, SHOW_AXIS=True, SHADED=False):
-    out = open("output.txt", "wb")
+def graph(f, filename, X_RANGE=100, Y_RANGE=100, LINE_WIDTH=1, SHOW_AXIS=True, SHADED=False):
+    out = open(filename, "wb")
     def pprint(val="\n"):
         out.write(val.encode())
         
@@ -70,4 +70,4 @@ def graph(f, X_RANGE=100, Y_RANGE=100, LINE_WIDTH=1, SHOW_AXIS=True, SHADED=Fals
     pprint()
     out.close()
 
-graph(relation, SHADED=1)
+graph(relation, "output.txt", SHADED=1)
